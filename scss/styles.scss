@@ -1,5 +1,21 @@
-$test: red;
+body{
+    margin: 0;
+    padding: 0;
+}
 
-body {
-    background-color: $test;
+.tree-menu{
+    padding-right: 40px;
+}
+
+ul{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    height: calc(2rem + 40px);
+}
+
+li{
+    margin: 20px;
+    border: 1px black solid;
+    list-style: none;
 }

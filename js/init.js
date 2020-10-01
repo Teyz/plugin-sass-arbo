@@ -15,16 +15,18 @@ let svgBg = document.createElementNS(svgNS, 'svg')
     svgBg.setAttribute('viewBox', viewBox)
     svgBg.setAttribute('height', treeMenu.getBoundingClientRect().height)
     svgBg.setAttribute('width', treeMenu.getBoundingClientRect().width)
-    
 
 treeMenu.parentNode.insertBefore(svgBg, treeMenu)
 
-traceLine()
+window.onload = function(event) {
+    traceLine()
+};
 
 window.onresize = function(event) {
     erazeLine()
     traceLine()
 };
+
 
 function traceLine(){
     node.forEach((item, i) => {

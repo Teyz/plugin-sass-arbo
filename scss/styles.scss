@@ -8,9 +8,12 @@ $color-white: #ffffff;
 $color-pink: #FF1493;
 
 body{
-    background-color: $color-two;
     margin: 0;
     padding: 0;
+    background-color: $color-two;
+    //background-image: url('../img/space.jpg');
+    //background-size: cover;
+    //background-repeat: no-repeat;
 }
 
 ul{
@@ -21,7 +24,7 @@ ul{
 }
 
 li{
-    margin: 30px;
+    margin: 50px 0 30px 30px;
     list-style: none;
     color: $color-white;
 
@@ -81,6 +84,7 @@ li{
 
   @media screen and (max-width: 640px) {
       ul{
+          display: block;
           flex-wrap: wrap;
       }
 
@@ -88,14 +92,21 @@ li{
           display: flex;
 
           span{
+            writing-mode: vertical-lr;
+            text-orientation: upright;
+            text-align: center;
               &:before{
                   top: 50% !important;
                   left: -5px !important;
               }
               &:after{
-                  top: 50% !important;
+                  bottom: 50% !important;
                   right: -5px !important;
               }
           }
+      }
+
+      .arbo-wrapper{
+          display: block;
       }
   }

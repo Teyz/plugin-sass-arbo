@@ -1,3 +1,33 @@
+.arbo-wrapper {
+  position: relative;
+  display: flex;
+}
+.arbo-wrapper .svg-bg {
+  /* TEMPORARY */
+  top: -10px;
+  left: -13%;
+  /* TEMPORARY */
+  position: absolute;
+  z-index: 99;
+  width: 100%;
+}
+.arbo-wrapper .svg-bg line {
+  stroke: darkred;
+}
+.arbo-wrapper .tree-menu {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+}
+.arbo-wrapper .tree-menu > li > span:before {
+  content: none;
+}
+
+.organizational-chart {
+  width: 100%;
+}
+
 ul.organizational-chart,
 ul.organizational-chart ul,
 ul.organizational-chart li,

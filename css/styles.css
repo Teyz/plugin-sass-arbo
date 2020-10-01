@@ -1,23 +1,90 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css?family=Raleway:200");
 body {
+  background-color: #2d3436;
   margin: 0;
   padding: 0;
-}
-
-.tree-menu {
-  padding-right: 40px;
 }
 
 ul {
   display: flex;
   text-align: center;
   justify-content: center;
-  height: calc(2rem + 40px);
 }
 
 li {
-  margin: 20px;
-  border: 1px black solid;
+  margin: 30px;
   list-style: none;
+  color: #ffffff;
+}
+li span {
+  font-size: 10px;
+  position: relative;
+  background-color: #55efc4;
+  border: 1px solid black;
+  padding: 5px;
+}
+li span:before {
+  content: "•";
+  position: absolute;
+  top: -5px;
+  left: 50%;
+}
+li span:after {
+  content: "•";
+  position: absolute;
+  bottom: -5px;
+  right: 50%;
+}
+li span:first-child {
+  background-color: #a29bfe;
+}
+li span:last-child {
+  background-color: #FF1493;
+}
+li span:last-child::after {
+  content: none;
+}
+
+.arbo-wrapper {
+  position: relative;
+  display: flex;
+}
+.arbo-wrapper .svg-bg {
+  position: absolute;
+}
+.arbo-wrapper .svg-bg line {
+  stroke: white;
+}
+.arbo-wrapper .tree-menu {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+}
+.arbo-wrapper .tree-menu > li > span {
+  background-color: #0984e3;
+}
+.arbo-wrapper .tree-menu > li > span:before {
+  content: none;
+}
+
+@media screen and (max-width: 640px) {
+  ul {
+    flex-wrap: wrap;
+  }
+
+  li {
+    display: flex;
+  }
+  li span:before {
+    top: 50% !important;
+    left: -5px !important;
+  }
+  li span:after {
+    top: 50% !important;
+    right: -5px !important;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */

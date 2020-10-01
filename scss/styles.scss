@@ -1,21 +1,101 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway:200');
+
+$color-one: #55efc4;
+$color-two: #2d3436;
+$color-three: #0984e3;
+$color-four: #a29bfe;
+$color-white: #ffffff;
+$color-pink: #FF1493;
+
 body{
+    background-color: $color-two;
     margin: 0;
     padding: 0;
-}
-
-.tree-menu{
-    padding-right: 40px;
 }
 
 ul{
     display: flex;
     text-align: center;
     justify-content: center;
-    height: calc(2rem + 40px);
+   // height: calc(2rem + 40px);
 }
 
 li{
-    margin: 20px;
-    border: 1px black solid;
+    margin: 30px;
     list-style: none;
+    color: $color-white;
+
+    span{
+        font-size: 10px;
+        position: relative;
+        background-color: $color-one;
+        border: 1px solid black;
+        padding: 5px;
+        &:before{
+            content:"•";
+            position: absolute;
+            top: -5px;
+            left: 50%;
+        }
+        &:after{
+            content:"•";
+            position: absolute;
+            bottom: -5px;
+            right: 50%;
+        }
+        &:first-child{
+            background-color: $color-four;
+        }
+        &:last-child{
+            background-color: $color-pink;
+        }
+        &:last-child::after{
+            content: none;
+        }
+    }
 }
+
+  .arbo-wrapper{
+      position: relative;
+      display: flex;
+      .svg-bg{
+          position: absolute;
+          line{
+              stroke: white;
+          }
+      }
+      .tree-menu{
+          position: relative;
+          z-index: 1;
+          margin: 0;
+          padding: 0;
+
+          &>li>span{
+              background-color: $color-three; 
+              &:before{
+                  content: none;
+              }    
+          }
+      }
+  }
+
+  @media screen and (max-width: 640px) {
+      ul{
+          flex-wrap: wrap;
+      }
+
+      li{
+          display: flex;
+
+          span{
+              &:before{
+                  top: 50% !important;
+                  left: -5px !important;
+              }
+              &:after{
+                  top: 50% !important;
+                  right: -5px !important;
+              }
+          }
+      }
+  }
